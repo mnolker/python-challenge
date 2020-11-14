@@ -4,11 +4,11 @@ import os
 import csv
 
 #file reference to open and read csv file
-PyBank_csv = os.path.join("Resources", "budget_data.csv").replace("\\","/")
+pyBank_csv = os.path.join("Resources", "budget_data.csv").replace("\\","/")
     #added .replace due to error with os.path.join adding '\\' when referencing file
     #other option is to use direct path to reference file =  PyBank_csv = "Resources/budget_data.csv"
 
-with open(PyBank_csv, newline='',encoding='utf-8') as csvfile:
+with open(pyBank_csv, newline='',encoding='utf-8') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     next(csvreader)
         #next skips header row
@@ -18,8 +18,8 @@ with open(PyBank_csv, newline='',encoding='utf-8') as csvfile:
     profit_loss = []
     amt_chg = []
 
+    #add csv column to newly created lists
     for row in csvreader:
-        #add csv column to newly created lists
         date.append(row[0])
         profit_loss.append(row[1])
         
